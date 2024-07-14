@@ -17,11 +17,17 @@ return {
 		"neovim/nvim-lspconfig",
 		lazy = false,
 		config = function()
-			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({})
+      local lspconfig = require("lspconfig")
+      local util = require "lspconfig/util"
+
+      lspconfig.lua_ls.setup({})
 			lspconfig.tsserver.setup({})
-      lspconfig.gopls.setup({})
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+      lspconfig.gopls.setup({
+        cmd = {"gopls"},
+        filetypes = {"go", "gomod", "gowork", "gotmpl"},
+        root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+      })
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, {})
 		end,
