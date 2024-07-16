@@ -8,7 +8,6 @@ return {
 				null_ls.builtins.diagnostics.erb_lint,
 				null_ls.builtins.formatting.prettier,
 				null_ls.builtins.formatting.goimports,
-        null_ls.builtins.formatting.goimports_reviser,
         null_ls.builtins.diagnostics.golangci_lint,
       },
 		})
