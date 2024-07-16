@@ -2,13 +2,17 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
+vim.cmd("set number")
+vim.cmd("set wildmode=longest,list")
+vim.cmd("syntax on")
+vim.cmd("set spell")
+vim.cmd("set noswapfile")
 vim.g.mapleader = " "
 
--- Mozgasd a sort feljebb normál módban
+
 vim.api.nvim_set_keymap("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true })
 
--- Mozgasd a kijelölt blokkokat feljebb vagy lejjebb vizuális módban
 vim.api.nvim_set_keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
