@@ -5,10 +5,9 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set number")
 vim.cmd("set wildmode=longest,list")
 vim.cmd("syntax on")
-vim.cmd("set spell")
 vim.cmd("set noswapfile")
 vim.g.mapleader = " "
-
+vim.g.lazyvim_php_lsp = "intelephense"
 
 vim.api.nvim_set_keymap("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true })
@@ -23,5 +22,5 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	callback = function()
 		require("go.format").goimports()
 	end,
-	group = format_sync_grp,
+  group = format_sync_grp,
 })
