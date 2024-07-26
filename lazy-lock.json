@@ -30,6 +30,7 @@
   "nvim-treesitter": { "branch": "master", "commit": "63be47f203d3e9174fdac3872fb9766e5bcc5a11" },
   "nvim-web-devicons": { "branch": "master", "commit": "e612de3d3a41a6b7be47f51e956dddabcbf419d9" },
   "nvim-yarp": { "branch": "master", "commit": "bb5f5e038bfe119d3b777845a76b0b919b35ebc8" },
+  "obsidian.nvim": { "branch": "main", "commit": "ee298fd2136612a4ca6a745a4aec3f49ce6f94b0" },
   "omnisharp-vim": { "branch": "master", "commit": "f9c5d3e3375e8b5688a4506e813cb21bdc7329b1" },
   "phpactor.nvim": { "branch": "main", "commit": "db250633e7b9f0e08cc7cce364de8b7adad4f6d2" },
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
