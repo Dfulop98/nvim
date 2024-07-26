@@ -7,12 +7,14 @@ return {
 		dependencies = {
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
+			"Snikimonkd/cmp-go-pkgs",
 		},
 	},
 	{
 		"hrsh7th/nvim-cmp",
 		config = function()
 			local cmp = require("cmp")
+
 			require("luasnip.loaders.from_vscode").lazy_load()
 			cmp.setup({
 				snippet = {
@@ -31,14 +33,16 @@ return {
 					["<C-e>"] = cmp.mapping.abort(),
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 				}),
-				sources = cmp.config.sources({
-					{ name = 'nvim_lsp' },
-					{ name = "luasnip" },
+				sources = {
+					{ name = "nvim_lsp" },
+					{ name = "luasnip", options = { use_show_condition = false } },
+					{ name = "path" },
+					{ name = "css-variables" },
+					{ name = "go_pkgs" },
+          { name = "treesitter" },
 					-- { name = 'ultisnips' }, -- For ultisnips users.
 					-- { name = 'snippy' }, -- For snippy users.
-				}, {
-					{ name = "buffer" },
-				}),
+				},
 			})
 		end,
 	},
