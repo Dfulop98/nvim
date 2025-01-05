@@ -24,3 +24,21 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	end,
   group = format_sync_grp,
 })
+
+-- Terminal keymaps --
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
+-- Terminal opt --
+vim.api.nvim_create_autocmd('TermOpen', {
+  group = vim.api.nvim_create_augroup('custom-term-open', { clear = true }),
+  callback = function()
+    vim.opt.number = false
+    vim.opt.relativenumber = false
+  end,
+})
+
+-- Open Terminal keysets --
+vim.keymap.set("n", "<space>st", function()
+  vim.cmd.vnew()
+  vim.cmd.term()
+  vim.cmd.wincmd("L")
+end)

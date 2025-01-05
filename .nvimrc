@@ -90,4 +90,5 @@ set termguicolors
 set wildcharm=<Tab>
 set wildmode=longest,list
 set window=69
+tnoremap <ESC> <C-\><C-n>
 " vim: set ft=vim :

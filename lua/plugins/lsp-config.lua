@@ -25,25 +25,15 @@ return {
         capabilities = capabilities,
       })
 
-      lspconfig.tsserver.setup({
-        capabilities = capabilities,
-      })
-
       lspconfig.gopls.setup({
         capabilities = capabilities,
         cmd = { "gopls" },
         filetypes = { "go", "gomod", "gowork", "gotmpl" },
         root_dir = util.root_pattern("go.work", "go.mod", ".git"),
       })
-      lspconfig.omnisharp.setup({
-        capabilities = capabilities,
-      })
 
-      lspconfig.phpactor.setup({
-        
-        cmd = { "C:/Users/dobo_/AppData/Local/nvim-data/opt/phpactor/bin/phpactor", "language-server" },
-        filetypes = { "php" },
-        root_dir = lspconfig.util.root_pattern("composer.json", ".git"),        
+      lspconfig.csharp_ls.setup({
+        capabilities = capabilities,
       })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

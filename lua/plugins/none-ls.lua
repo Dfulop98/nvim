@@ -5,12 +5,7 @@ return {
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.diagnostics.erb_lint,
-				null_ls.builtins.formatting.prettier,
-				null_ls.builtins.formatting.goimports,
-        null_ls.builtins.diagnostics.golangci_lint,
-        null_ls.builtins.formatting.pretty_php,
-        null_ls.builtins.diagnostics.phpstan 
+        null_ls.builtins.formatting.csharpier,
       },
 		})
 		vim.keymap.set("n", "<leader>fc", vim.lsp.buf.format, {})
